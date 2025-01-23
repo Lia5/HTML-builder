@@ -20,7 +20,9 @@ rl.on('line', (input) => {
   }
 });
 
-process.on('SIGINT', endingMessage);
+rl.on('SIGINT', () => {
+  endingMessage();
+});
 
 function endingMessage() {
   console.log('\nThank you! This is end!');
